@@ -29,7 +29,7 @@ public class Builder<HA, HB, HC> {
         return new Builder<HA, TRUE, HC>( name, age, state );
     }
     
-    public Builder<HA, HB, TRUE> initTelephone( String telephone ){
+    public Builder<HA, HB, TRUE> initState( String telephone ){
         return new Builder<HA, HB, TRUE>( name, age, state );
     }
     
