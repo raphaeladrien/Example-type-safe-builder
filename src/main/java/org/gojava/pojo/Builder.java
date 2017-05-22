@@ -3,18 +3,18 @@ package org.gojava.pojo;
 public class Builder<HA, HB, HC> {
     
     protected String name;
-    protected String age;
-    protected String telephone;
+    protected Integer age;
+    protected String state;
     
     private Builder(){
         super();
     }
     
-    private Builder( String name, String age, String telephone ){
+    private Builder( String name, Integer age, String state ){
         super();
         this.name = name;
         this.age = age;
-        this.telephone = telephone;
+        this.state = state;
     }
     
     public static Builder<FALSE, FALSE, FALSE> create(){
@@ -22,15 +22,15 @@ public class Builder<HA, HB, HC> {
     }
     
     public Builder<TRUE, HB, HC> initName( String name ){
-        return new Builder<TRUE, HB, HC>( name, age, telephone );
+        return new Builder<TRUE, HB, HC>( name, age, state );
     }
     
-    public Builder<HA, TRUE, HC> initAge( String age ){
-        return new Builder<HA, TRUE, HC>( name, age, telephone );
+    public Builder<HA, TRUE, HC> initAge( Integer age ){
+        return new Builder<HA, TRUE, HC>( name, age, state );
     }
     
     public Builder<HA, HB, TRUE> initTelephone( String telephone ){
-        return new Builder<HA, HB, TRUE>( name, age, telephone );
+        return new Builder<HA, HB, TRUE>( name, age, state );
     }
     
     static abstract class TRUE{};

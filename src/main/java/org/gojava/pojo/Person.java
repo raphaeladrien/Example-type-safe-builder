@@ -5,21 +5,21 @@ import org.gojava.pojo.Builder.TRUE;
 public class Person {
 
     private String name;
-    private String age;
-    private String telephone;
+    private Integer age;
+    private String state;
     
     public Person(Builder<TRUE, TRUE, TRUE> builder){
-        this( builder.name, builder.age, builder.telephone );
+        this( builder.name, builder.age, builder.state );
     }
     
-    private Person( String name, String age, String telephone ){
+    private Person( String name, Integer age, String state ){
         this.name = name;
         this.age = age;
-        this.telephone = telephone;
+        this.state = state;
     }
     
     public String toString(){
-        return "Name: " + name + " age: " + age + " telephone; " + telephone;
+        return "Name: " + name + " age: " + age + " state: " + state;
     }
     
 }
